@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-bg-template="constellation">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MJ · Mark James B. Gamboa — Interactive Cyber-Forge Portfolio 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Fullscreen Interactive Mouse-Reactive Canvas -->
+  <div class="interactive-stage" aria-hidden="true">
+    <canvas id="interactiveBgCanvas"></canvas>
+    <div class="ambient-glow glow-one"></div>
+    <div class="ambient-glow glow-two"></div>
+  </div>
+
+  <!-- Top Navigation -->
+  <header class="site-header" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-badge">MJ</span>
+        <span class="brand-text">yourportfolio<span class="accent-primary">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#intro">01 / Intro</a>
+        <a href="#skills">02 / Skills</a>
+        <a href="#milestones">03 / Certificates</a>
+        <a href="#hobbies">04 / Hobbies</a>
+        <a href="#contact">06 / Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-sm btn-primary hide-mobile">Message MJ ✉</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4 Interactive Background Template Switcher Bar -->
+    <div class="bg-switcher-bar">
+      <div class="container switcher-inner">
+        <span class="switcher-label">🖱 INTERACTIVE BG (MOVE / CLICK CURSOR):</span>
+        <div class="template-pills" role="group" aria-label="Interactive Background Templates">
+          <button type="button" class="tpl-btn active" data-template="constellation">
+            <span class="tpl-dot"></span> 01 · Cyber Neural Web
+          </button>
+          <button type="button" class="tpl-btn" data-template="inferno">
+            <span class="tpl-dot"></span> 02 · Inferno Fire Vortex
+          </button>
+          <button type="button" class="tpl-btn" data-template="matrix">
+            <span class="tpl-dot"></span> 03 · Matrix Code Ripple
+          </button>
+          <button type="button" class="tpl-btn" data-template="aurora">
+            <span class="tpl-dot"></span> 04 · Sunlit Aurora Fluid
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#intro">01 / A Little Introduction</a>
+      <a href="#skills">02 / What I'm Building</a>
+      <a href="#milestones">03 / Milestones &amp; Certificates</a>
+      <a href="#hobbies">04 / Hobbies &amp; Interests</a>
+      <a href="#contact">06 / Say Hello</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow-row">
+            <span class="mono-pill">⚡ MY PERSONAL PORTFOLIO · 2026</span>
+            <span class="status-pill">
+              <span class="pulse-dot"></span>
+              OPEN TO LEARNING &amp; OPPORTUNITIES
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            Curious mind.<br />
+            <span class="dynamic-gradient-text">Creative spirit.</span><br />
+            Always learning.
+          </h1>
+
+          <!-- Animated Typing Terminal Line -->
+          <div class="typing-bar" aria-live="polite">
+            <span class="typing-prompt">&gt;_</span>
+            <span id="typingText" class="typing-text"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-lead">
+            Hi, I'M <strong>MARK JAMES B. GAMBOA</strong> — a <strong>1ST YEAR INFORMATION TECHNOLOGY</strong> student at <strong>MINDORO STATE UNIVERSITY</strong>. I enjoy exploring new ideas, building skills, and turning what I learn into something meaningful.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#milestones" class="btn btn-primary">Explore my work ↗</a>
+            <a href="#contact" class="btn btn-secondary">Send me an Email ✉</a>
+          </div>
+
+          <div class="scroll-indicator">
+            <span class="mono-label">01 LEARN · CREATE · GROW</span>
+            <span class="scroll-divider"></span>
+            <span class="mono-label accent-secondary">MOVE OR CLICK ANYWHERE TO PLAY WITH BACKGROUND</span>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE PROFILE CARD -->
+        <div class="hero-visual reveal">
+          <div class="profile-card glass-card tilt-card">
+            <div class="profile-card-top">
+              <span class="mono-label">PROFILE / 01</span>
+              <span class="available-tag">
+                <span class="pulse-dot"></span> AVAILABLE TO LEARN
+              </span>
+            </div>
+
+            <div class="profile-photo-frame">
+              <img src="profile.jpg" alt="Portrait of Mark James B. Gamboa" class="profile-photo" />
+              <div class="photo-aura" aria-hidden="true"></div>
+              <div class="photo-corner tl"></div>
+              <div class="photo-corner tr"></div>
+              <div class="photo-corner bl"></div>
+              <div class="photo-corner br"></div>
+            </div>
+
+            <div class="profile-card-footer">
+              <div class="profile-identity">
+                <div class="mj-monogram">MJ</div>
+                <div>
+                  <h2 class="profile-name">MARK JAMES B. GAMBOA</h2>
+                  <p class="profile-course">INFORMATION TECHNOLOGY · 1ST YEAR</p>
+                </div>
+              </div>
+              <a href="#contact" class="icon-link-btn" aria-label="Connect with Mark James">↗</a>
+            </div>
+
+            <div class="profile-tags">
+              <span class="tag-chip primary">CREATIVE THINKER</span>
+              <span class="tag-chip secondary">FUTURE ENGINEER</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 / A LITTLE INTRODUCTION -->
+    <section id="intro" class="section-block">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">01 / A LITTLE INTRODUCTION</span>
+          <h2 class="section-title">More than a student.<br /><span class="accent-secondary">A work in progress.</span></h2>
+        </div>
+
+        <div class="intro-grid">
+          <div class="quote-card glass-card tilt-card reveal">
+            <div class="quote-mark">“</div>
+            <blockquote class="personal-quote">
+              I am a cheerful and happy person who loves making people smile and spreading positive energy. I enjoy learning new things, especially those that can help me improve my skills and achieve my dreams. My goal is to become an engineer someday. What motivates me the most is my parents and all the sacrifices they have made for me. I want to give back to them and repay their love, hard work, and sacrifices by making them proud and giving them a better life. I hope to become a successful, responsible, and hardworking person who never gives up on my dreams.
+            </blockquote>
+            <div class="quote-footer">
+              <span class="mono-label accent-primary">PERSONAL MISSION &amp; MOTIVATION</span>
+            </div>
+          </div>
+
+          <div class="bio-card glass-card tilt-card reveal">
+            <h3 class="card-subtitle">A FEW WORDS ABOUT ME</h3>
+            <p class="body-text">
+              I'm currently studying <strong>INFORMATION TECHNOLOGY</strong> as a <strong>1ST YEAR</strong> student at <strong>MINDORO STATE UNIVERSITY</strong>. This portfolio is a snapshot of my learning journey — the skills I'm developing, the milestones I've reached, and the goals I'm working toward.
+            </p>
+
+            <div class="details-grid">
+              <div class="detail-item">
+                <span class="detail-label">FULL NAME</span>
+                <span class="detail-value">MARK JAMES B. GAMBOA</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">NICKNAME</span>
+                <span class="detail-value">MJ</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">EDUCATION</span>
+                <span class="detail-value">1ST YEAR</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">SCHOOL</span>
+                <span class="detail-value">MINDORO STATE UNIVERSITY</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">COURSE</span>
+                <span class="detail-value">INFORMATION TECHNOLOGY</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">LOCATION</span>
+                <span class="detail-value">CALAPAN CITY, ORIENTAL MINDORO</span>
+              </div>
+            </div>
+
+            <div class="card-action-row">
+              <a href="#contact" class="btn btn-primary">Connect with me ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 / WHAT I'M BUILDING -->
+    <section id="skills" class="section-block">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">02 / WHAT I'M BUILDING</span>
+          <h2 class="section-title">Skills that grow<br /><span class="accent-primary">with every experience.</span></h2>
+          <p class="section-desc">A mix of technical knowledge and everyday strengths that drive my growth as an IT student.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Technical Skills -->
+          <div class="skill-panel glass-card tilt-card reveal">
+            <div class="panel-top">
+              <span class="panel-icon primary">⌘</span>
+              <div>
+                <span class="mono-label accent-secondary">THE TOOLKIT</span>
+                <h3 class="panel-title">Technical Skills</h3>
+              </div>
+            </div>
+
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-bullet">01</span>
+                <div>
+                  <strong>Basic Computer Skills</strong>
+                  <span class="skill-meta">Operating systems, file management &amp; digital productivity</span>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-bullet">02</span>
+                <div>
+                  <strong>Programming (C# &amp; C)</strong>
+                  <span class="skill-meta">Structured logic, syntax fundamentals &amp; problem implementation</span>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-bullet">03</span>
+                <div>
+                  <strong>Microsoft Word</strong>
+                  <span class="skill-meta">Academic documentation, formatting &amp; structured reports</span>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-bullet">04</span>
+                <div>
+                  <strong>Microsoft PowerPoint</strong>
+                  <span class="skill-meta">Visual presentations, clean slide design &amp; storytelling</span>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-bullet">05</span>
+                <div>
+                  <strong>Problem-Solving and Troubleshooting</strong>
+                  <span class="skill-meta">Debugging code, analytical thinking &amp; practical fixes</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-panel glass-card tilt-card reveal">
+            <div class="panel-top">
+              <span class="panel-icon secondary">✳</span>
+              <div>
+                <span class="mono-label accent-primary">HOW I WORK</span>
+                <h3 class="panel-title">General / Soft Skills</h3>
+              </div>
+            </div>
+
+            <p class="work-ethic-quote">
+              “I work with a positive attitude and always try my best in everything I do. I am willing to learn new things, work with others, and improve my skills. I believe that patience, teamwork, and determination help me achieve my goals.”
+            </p>
+
+            <div class="soft-skills-pills">
+              <span class="soft-pill"><span>✦</span> Hardworking</span>
+              <span class="soft-pill"><span>✦</span> Responsible</span>
+              <span class="soft-pill"><span>✦</span> Positive Attitude</span>
+              <span class="soft-pill"><span>✦</span> Teamwork</span>
+              <span class="soft-pill"><span>✦</span> Good Communication</span>
+              <span class="soft-pill"><span>✦</span> Willingness to Learn</span>
+            </div>
+
+            <div class="panel-bottom-note">
+              Good work grows from curiosity, practice, communication, and a willingness to improve.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / MILESTONES & CERTIFICATES -->
+    <section id="milestones" class="section-block">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">03 / MILESTONES</span>
+          <h2 class="section-title">Small wins.<br /><span class="accent-secondary">Meaningful progress.</span></h2>
+          <p class="section-desc">Verified CodeChum certificates earned at Mindoro State University. Select any card to inspect details and verification credentials.</p>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Certificate 1: C# -->
+          <article class="cert-card glass-card tilt-card reveal" data-cert="csharp" tabindex="0" role="button" aria-label="View C# Programming 1 Certificate">
+            <div class="cert-header">
+              <span class="mono-label accent-primary">01 / CERTIFICATE ✳</span>
+              <span class="cert-score-badge">99.8% · 1312/1315</span>
+            </div>
+
+            <div class="cert-body">
+              <div class="cert-issuer">CODECHUM · MINDORO STATE UNIVERSITY</div>
+              <h3 class="cert-title">C# Programming 1</h3>
+              <p class="cert-course">Course Code: <strong>1F3-ITC112-CSharp</strong></p>
+              <div class="cert-meta-row">
+                <span>Issued: <strong>Nov. 8, 2026</strong></span>
+                <span>ID: <strong>#32405</strong></span>
+              </div>
+            </div>
+
+            <div class="cert-footer">
+              <span class="cert-cta">Click to view details ↗</span>
+              <a href="https://minsu.codechum.com/certificates/32405" target="_blank" rel="noopener noreferrer" class="verify-link" onclick="event.stopPropagation();">Verify Online ↗</a>
+            </div>
+          </article>
+
+          <!-- Certificate 2: C Language -->
+          <article class="cert-card glass-card tilt-card reveal" data-cert="clang" tabindex="0" role="button" aria-label="View C Programming 1 Certificate">
+            <div class="cert-header">
+              <span class="mono-label accent-secondary">02 / CERTIFICATE ◇</span>
+              <span class="cert-score-badge secondary">99.0% · 1352/1365</span>
+            </div>
+
+            <div class="cert-body">
+              <div class="cert-issuer">CODECHUM · MINDORO STATE UNIVERSITY</div>
+              <h3 class="cert-title">C Programming 1</h3>
+              <p class="cert-course">Course Code: <strong>1F3-ITC112</strong></p>
+              <div class="cert-meta-row">
+                <span>Issued: <strong>Nov. 8, 2026</strong></span>
+                <span>ID: <strong>#32362</strong></span>
+              </div>
+            </div>
+
+            <div class="cert-footer">
+              <span class="cert-cta">Click to view details ↗</span>
+              <a href="https://minsu.codechum.com/certificates/32362" target="_blank" rel="noopener noreferrer" class="verify-link" onclick="event.stopPropagation();">Verify Online ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / HOBBIES & INTERESTS -->
+    <section id="hobbies" class="section-block">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">04 / BEYOND THE SCREEN</span>
+          <h2 class="section-title">My Hobbies &amp; <span class="accent-primary">Interests</span></h2>
+          <p class="section-desc">Things that recharge my energy, inspire creativity, and keep life balanced.</p>
+        </div>
+
+        <div class="hobbies-grid">
+          <div class="hobby-card glass-card tilt-card reveal">
+            <div class="hobby-top">
+              <span class="hobby-emoji">🎧</span>
+              <span class="mono-label">01</span>
+            </div>
+            <h3 class="hobby-title">Eating My Favorite Food</h3>
+            <p class="hobby-desc">I enjoy eating delicious food, especially my favorites.</p>
+          </div>
+
+          <div class="hobby-card glass-card tilt-card reveal">
+            <div class="hobby-top">
+              <span class="hobby-emoji">📚</span>
+              <span class="mono-label">02</span>
+            </div>
+            <h3 class="hobby-title">Nature Trips</h3>
+            <p class="hobby-desc">I love exploring beautiful places and enjoying nature.</p>
+          </div>
+
+          <div class="hobby-card glass-card tilt-card reveal">
+            <div class="hobby-top">
+              <span class="hobby-emoji">🎨</span>
+              <span class="mono-label">03</span>
+            </div>
+            <h3 class="hobby-title">Swimming</h3>
+            <p class="hobby-desc">I enjoy swimming because it is fun and relaxing.</p>
+          </div>
+
+          <div class="hobby-card glass-card tilt-card reveal">
+            <div class="hobby-top">
+              <span class="hobby-emoji">⚽</span>
+              <span class="mono-label">04</span>
+            </div>
+            <h3 class="hobby-title">Online Gaming</h3>
+            <p class="hobby-desc">I like playing online games during my free time.</p>
+          </div>
+
+          <div class="hobby-card glass-card tilt-card reveal">
+            <div class="hobby-top">
+              <span class="hobby-emoji">🌱</span>
+              <span class="mono-label">05</span>
+            </div>
+            <h3 class="hobby-title">Bonding with Friends</h3>
+            <p class="hobby-desc">I enjoy spending quality time and making memories with my friends.</p>
+          </div>
+
+          <div class="hobby-card glass-card tilt-card reveal">
+            <div class="hobby-top">
+              <span class="hobby-emoji">✳</span>
+              <span class="mono-label">06</span>
+            </div>
+            <h3 class="hobby-title">Watching Anime</h3>
+            <p class="hobby-desc">I love watching anime because I enjoy its stories, characters, and adventures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / SAY HELLO — DIRECT EMAIL DISPATCHER -->
+    <section id="contact" class="section-block">
+      <div class="container">
+        <div class="contact-box glass-card reveal">
+          <div class="contact-content">
+            <span class="section-kicker">06 / SAY HELLO · DIRECT EMAIL</span>
+            <h2 class="section-title">Have an idea? <span class="dynamic-gradient-text">Let's connect!</span></h2>
+            <p class="body-text">
+              I'm always happy to meet new people, share experiences, learn new things, and build friendships. Send me a direct message straight to my inbox below!
+            </p>
+
+            <div class="contact-cards">
+              <div class="contact-detail-box">
+                <span class="detail-label">DIRECT INBOX</span>
+                <div class="email-row">
+                  <a href="mailto:gamboamarkjamesberon@gmail.com" class="contact-link">gamboamarkjamesberon@gmail.com</a>
+                  <button type="button" class="copy-btn" id="copyEmailBtn" data-email="gamboamarkjamesberon@gmail.com">Copy Email</button>
+                </div>
+              </div>
+
+              <div class="contact-detail-box">
+                <span class="detail-label">BASED IN</span>
+                <span class="contact-location">CALAPAN CITY, ORIENTAL MINDORO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Email Sender Form -->
+          <form class="quick-message-form" id="contactForm">
+            <div class="form-header-row">
+              <h3 class="form-title">Send Message to MJ</h3>
+              <span class="mono-label accent-primary">INSTANT SEND</span>
+            </div>
+
+            <div class="form-row-two">
+              <div class="form-group">
+                <label for="senderName">Your Name *</label>
+                <input type="text" id="senderName" name="name" placeholder="Juan Dela Cruz" required />
+              </div>
+              <div class="form-group">
+                <label for="senderEmail">Your Email *</label>
+                <input type="email" id="senderEmail" name="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="senderSubject">Subject</label>
+              <input type="text" id="senderSubject" name="subject" placeholder="Collaboration / Project / Hello!" required />
+            </div>
+
+            <div class="form-group">
+              <label for="senderMessage">Message *</label>
+              <textarea id="senderMessage" name="message" rows="3" placeholder="Hi MJ! Let's connect..." required></textarea>
+            </div>
+
+            <div class="send-btn-stack">
+              <button type="submit" class="btn btn-primary full-width" id="sendDirectBtn">
+                <span id="sendBtnText">Send Direct to MJ's Inbox 🚀</span>
+              </button>
+              <button type="button" class="btn btn-secondary full-width btn-xs" id="openMailAppBtn">
+                Or Open in Default Mail App / Gmail ↗
+              </button>
+            </div>
+
+            <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-badge">Y.</span>
+        <span class="brand-text">yourportfolio</span>
+      </div>
+      <p class="footer-copy">DESIGNED TO GROW · © 2026 MARK JAMES B. GAMBOA</p>
+      <a href="#top" class="back-to-top">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+
+  <!-- CERTIFICATE MODAL -->
+  <div class="modal-backdrop" id="certModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalCertTitle">
+    <div class="modal-dialog glass-card">
+      <button class="modal-close" id="closeModalBtn" aria-label="Close Certificate Modal">✕</button>
+
+      <div class="modal-badge-row">
+        <span class="mono-pill" id="modalBadge">CODECHUM VERIFIED</span>
+        <span class="cert-score-badge" id="modalScore">1312 / 1315</span>
+      </div>
+
+      <h3 class="modal-title" id="modalCertTitle">Certificate of Completion</h3>
+      <p class="modal-subtitle" id="modalSubtitle">C# Programming 1</p>
+
+      <div class="modal-cert-preview">
+        <div class="cert-seal">✓</div>
+        <p class="cert-award-line">THIS CERTIFIES THAT</p>
+        <h4 class="cert-recipient">Mark James Gamboa</h4>
+        <p class="cert-description" id="modalDescription">
+          has successfully completed C# Programming 1 in 1F3-ITC112-CSharp at Mindoro State University.
+        </p>
+        <div class="cert-meta-grid">
+          <div>
+            <span class="detail-label">DATE ISSUED</span>
+            <strong id="modalDate">Nov. 8, 2026</strong>
+          </div>
+          <div>
+            <span class="detail-label">CERTIFICATE ID</span>
+            <strong id="modalCertId">32405</strong>
+          </div>
+          <div>
+            <span class="detail-label">INSTITUTION</span>
+            <strong>Mindoro State University</strong>
+          </div>
+          <div>
+            <span class="detail-label">TOTAL SCORE</span>
+            <strong id="modalRawScore">1312/1315</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://minsu.codechum.com/certificates/32405" target="_blank" rel="noopener noreferrer" id="modalVerifyLink" class="btn btn-primary">
+          Open Official CodeChum Certificate ↗
+        </a>
+        <button type="button" class="btn btn-secondary" id="modalDoneBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
